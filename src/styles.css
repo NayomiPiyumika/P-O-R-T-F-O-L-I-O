@@ -314,49 +314,6 @@ body {
     z-index: 1;
 }
 
-/* Home Page එකේ grid එකට සමාන නමුත් විරුද්ධ පැත්තට (Mirror) වන grid එක */
-.about-section::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: 
-        /* මෘදු නිල් Glows - Home එකට වඩා වෙනස් තැන් වල */
-        radial-gradient(circle at 100% 0%, rgba(0, 242, 255, 0.15) 0%, transparent 55%),
-        radial-gradient(circle at 0% 100%, rgba(0, 242, 255, 0.1) 0%, transparent 40%),
-        /* Home Grid එකට සමාන Grid Lines */
-        linear-gradient(rgba(0, 242, 255, 0.08) 1px, transparent 1px) 0 0 / 60px 60px,
-        linear-gradient(90deg, rgba(0, 242, 255, 0.08) 1px, transparent 1px) 0 0 / 60px 60px;
-    
-    /* Grid එක දකුණු පැත්තේ සිට වමට මැකී යන ලෙස (Mask) */
-    -webkit-mask-image: linear-gradient(to left, black, transparent 70%);
-    mask-image: linear-gradient(to left, black, transparent 70%);
-    z-index: -2;
-    pointer-events: none;
-}
-
-/* Moving Scanning Line - අලුත්ම Futuristic අංගය */
-.about-section::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(0, 242, 255, 0.05),
-        transparent
-    );
-    /* වමේ සිට දකුණට යන හෙමින් ගලායන එළිය */
-    animation: scanLine 10s linear infinite;
-    z-index: -1;
-}
-
-@keyframes scanLine {
-    0% { left: -100%; }
-    100% { left: 150%; }
-}
 
 
 
@@ -447,6 +404,10 @@ body {
     border-radius: 50%;
     box-shadow: 0 0 10px var(--cyan);
 }
+
+
+
+
 
 .timeline-item .date {
     font-size: 0.85rem;
@@ -705,9 +666,8 @@ body {
 /* --- Contact Section Full Styles --- */
 .contact-section {
     padding: 100px 8%;
-    background-color: var(--bg-black);
     position: relative;
-    z-index: 5;
+    background-color: #20202024;
 }
 
 .contact-container {
